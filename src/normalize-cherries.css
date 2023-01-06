@@ -1,0 +1,21 @@
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+details {
+	display: block;
+}
+
+summary {
+	display: list-item;
+}
