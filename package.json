@@ -5,7 +5,7 @@
     "build:static": "cp --verbose --recursive static/* dist",
     "build:html": "node render-pug.js",
     "build": "npm run build:init && npm run build:static && npm run build:html",
-    "watch:html": "inotifywait --quiet --monitor --event CLOSE_WRITE --format %f src | egrep --line-buffered \"\\.pug$\" | while read path; do echo \"$path changed, with $(timeout 0.2 cat | wc -l) others\"; npm run build:html; done",
+    "watch:html": "inotifywait --quiet --monitor --event CLOSE_WRITE --format %f src | while read path; do echo \"$path changed, with $(timeout 0.2 cat | wc -l) others\"; npm run build:html; done",
     "watch": "npm run watch:html",
     "serve": "python3 -m http.server -d dist",
     "dev": "npm run build:init && (cd dist && ln --force --symbolic ../static/* .) && npm run build:html && concurrently \"npm:watch\" \"npm:serve\""
