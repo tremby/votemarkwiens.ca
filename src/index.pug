@@ -1,5 +1,5 @@
 mixin lazystyle(href)
-	link(rel="preload" href=href as="style" onload="this.onload=null;this.rel='stylesheet'")
+	link(rel="preload" href=href as="style" onload="this.onload=null;this.rel=\"stylesheet\"")
 	noscript
 		link(rel="stylesheet" href=href)
 
