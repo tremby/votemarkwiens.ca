@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "clean": "rm --verbose --recursive --force dist",
+    "build:init": "npm run clean && mkdir --verbose --parents dist",
+    "build:static": "cp --verbose --recursive static/* dist",
+    "build": "npm run build:init && npm run build:static"
+  }
+}
