@@ -95,13 +95,12 @@ picture.divider img {
 	float: right;
 	margin: var(--float-margin);
 	margin-top: 0;
-	margin-right: calc(0px - var(--padding));
-	border-radius: var(--border-radius) 0 0 var(--border-radius);
+	margin-right: calc(0px - var(--padding) / 2);
+	border-radius: var(--border-radius);
 }
 @media (min-width: 42rem) {
 	#biography img {
 		margin-right: 0;
-		border-radius: var(--border-radius);
 		width: 16.8rem; /* This is its max variable width */
 	}
 }
