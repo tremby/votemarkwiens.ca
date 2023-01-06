@@ -1,3 +1,8 @@
+mixin lazystyle(href)
+	link(rel="preload" href=href as="style" onload="this.onload=null;this.rel='stylesheet'")
+	noscript
+		link(rel="stylesheet" href=href)
+
 mixin deeplink(href)
 	a.deeplink(href=href aria-hidden="true") #
 
@@ -31,11 +36,18 @@ html(lang="en-CA")
 		meta(property="og:image" content="/share-image.png")
 		link(rel="icon" href="/favicon.ico" sizes="any")
 		//- link(rel="icon" href="/favicon.svg" type="image/svg+xml")
+
+		style(type="text/css")
+			include critical.css
+
+		//- Lazyload the non-critical styles
+		+lazystyle("/style.css")
+
+		//- Lazyload the font
 		link(rel="preconnect" href="https://fonts.googleapis.com")
 		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-		link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wdth,wght@25..125,200..700&display=swap")
-		link(rel="stylesheet" href="/lib/normalize.css")
-		link(rel="stylesheet" href="/style.css")
+		+lazystyle("https://fonts.googleapis.com/css2?family=Roboto+Flex:wdth,wght@25..125,200..700&display=swap")
+
 		script(type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js")
 	body
 		header#hero
@@ -45,6 +57,7 @@ html(lang="en-CA")
 				section#introduction(aria-label="Introduction")
 					//- TODO: replace video, and add videotitle="..." attr
 					lite-youtube.youtube(videoid="c57xt4YcLLw")
+						div.prerender
 					p
 						| #[span.big #[strong Hi there!] My name is Mark Wiens.]
 						| I’m asking for your vote for the position of Director in the Real Estate Board of Greater Vancouver’s Board of Directors election, voting for which starts on January 13th.

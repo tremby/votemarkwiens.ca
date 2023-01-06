@@ -2,18 +2,16 @@
   "scripts": {
     "clean": "rm --verbose --recursive --force dist",
     "build:init": "npm run clean && mkdir --verbose --parents dist",
-    "build:deps": "mkdir --verbose --parents dist/lib && cp node_modules/normalize.css/normalize.css dist/lib",
     "build:static": "cp --verbose --recursive static/* dist",
     "build:html": "node render-pug.js",
-    "build": "npm run build:init && npm run build:deps && npm run build:static && npm run build:html",
+    "build": "npm run build:init && npm run build:static && npm run build:html",
     "watch:html": "inotifywait --quiet --monitor --event CLOSE_WRITE --format %f src | egrep --line-buffered \"\\.pug$\" | while read path; do echo \"$path changed, with $(timeout 0.2 cat | wc -l) others\"; npm run build:html; done",
     "watch": "npm run watch:html",
     "serve": "python3 -m http.server -d dist",
-    "dev": "npm run build:init && npm run build:deps && (cd dist && ln --force --symbolic ../static/* .) && npm run build:html && concurrently \"npm:watch\" \"npm:serve\""
+    "dev": "npm run build:init && (cd dist && ln --force --symbolic ../static/* .) && npm run build:html && concurrently \"npm:watch\" \"npm:serve\""
   },
   "dependencies": {
     "concurrently": "^7.6.0",
-    "normalize.css": "^8.0.1",
     "pug": "^3.0.2"
   }
 }
