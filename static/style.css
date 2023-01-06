@@ -37,10 +37,8 @@ picture.divider img {
 #issues > ol {
 	padding-left: 0;
 }
-#issues > ol > li.disclosure {
-	list-style-type: none;
-}
 #issues > ol > li {
+	list-style-type: none;
 	margin-top: var(--big-gap);
 }
 #issues > ol > li > details {
@@ -52,21 +50,24 @@ picture.divider img {
 #issues > ol > li > details[open] {
 	--marker: "▼";
 }
+#issues > ol > li > h3::before {
+	content: counter(list-item) ". ";
+}
 #issues > ol > li > details > summary h3::before {
 	content: var(--marker) " " counter(list-item) ". ";
 }
 @media (min-width: 46rem) {
-	#issues > ol > li > details {
-		list-style-position: inside;
+	#issues > ol > li:not(.disclosure) {
+		list-style-type: decimal;
 	}
-	#issues > ol > li > details,
 	#issues > ol > li > details > summary {
 		list-style-position: outside;
 	}
 	#issues > ol > li > details > summary::marker {
 		content: var(--marker) " " counter(list-item) ". ";
 	}
-	#issues > ol > li > details > summary h3::before {
+	#issues > ol > li > h3::before,
+	#issues > ol > li > details > summary > h3::before {
 		content: none;
 	}
 }
