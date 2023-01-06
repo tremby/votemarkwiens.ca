@@ -1,0 +1,437 @@
+mixin deeplink(href)
+	a.deeplink(href=href aria-hidden="true") #
+
+mixin img(src, dimensions, widths, options)
+	img(
+		src=imgixSrc(src, widths[0], options)
+		srcset=imgixSrcset(src, widths, options)
+	)&attributes({ ...nominalDimensions(dimensions, widths, options), ...attributes })
+
+mixin source(src, dimensions, widths, options)
+	source(
+		srcset=imgixSrcset(src, widths, options)
+	)&attributes({ ...nominalDimensions(dimensions, widths, options), ...attributes })
+
+mixin more
+	span.more(aria-hidden="true") Read more…
+
+include icons.pug
+
+doctype html
+html(lang="en-CA")
+	head
+		meta(charset="utf-8")
+		title Vote Mark Wiens for Director of the REBGV Board of Directors
+		meta(
+			name="description"
+			content="Mark Wiens is running for the Director position in the REBGV 2023 election. Read about his priorities and learn how to vote."
+		)
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(property="og:type" content="website")
+		meta(property="og:image" content="/share-image.png")
+		link(rel="icon" href="/favicon.ico" sizes="any")
+		//- link(rel="icon" href="/favicon.svg" type="image/svg+xml")
+		link(rel="preconnect" href="https://fonts.googleapis.com")
+		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wdth,wght@25..125,200..700&display=swap")
+		link(rel="stylesheet" href="/lib/normalize.css")
+		link(rel="stylesheet" href="/style.css")
+	body
+		header#hero
+			h1 Vote #[strong Mark Wiens] for Director
+		main
+			div.container
+				section#introduction(aria-label="Introduction")
+					//- TODO: replace video
+					iframe.youtube(
+						width=560
+						height=315
+						src="https://www.youtube.com/embed/c57xt4YcLLw"
+						title="YouTube video player"
+						frameborder=0
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen
+					)
+					p
+						| #[span.big #[strong Hi there!] My name is Mark Wiens.]
+						| I’m asking for your vote for the position of Director in the Real Estate Board of Greater Vancouver’s Board of Directors election, voting for which starts on January 13th.
+						| I’m running for this volunteer position because I have the knowledge, experience, demeanor, willingness, and expertise to make positive change.
+						| I plan to increase the value the Board brings to you while lowering our costs.
+						| I’ll do this by focusing on the following issues:
+					ol.unstyled.card-container#issues-summary.container.narrow
+						li
+							a.card(href="#perception")
+								+icon_visibility.icon(aria-hidden="true")
+								span.label Improving the public perception of REALTORS®
+						li
+							a.card(href="#data-accuracy")
+								+icon_ads_click.icon(aria-hidden="true")
+								span.label Improving data accuracy
+						li
+							a.card(href="#technology")
+								+icon_construction.icon(aria-hidden="true")
+								span.label Improving our MLS® and other technology
+						li
+							a.card(href="#rule-enforcement")
+								+icon_local_police.icon(aria-hidden="true")
+								span.label Enforcing our standards and rules
+						li
+							a.card(href="#data-usage")
+								+icon_source_notes.icon(aria-hidden="true")
+								span.label Re-evaluating our data usage
+						li
+							a.card(href="#communication")
+								+icon_forum.icon(aria-hidden="true")
+								span.label Being more outspoken in our commentary on new government regulation
+
+				section#biography
+					header
+						h2
+							| About Mark
+							+deeplink("#biography")
+					+img("mark/mark-wiens-headshot-edit.jpg", [3200, 4800], [128, 168, 269, 538], { rect: "0.235,0.04,1550,2100" })(
+						alt="Mark Wiens smiles at the camera, wearing a suit and tie"
+						sizes="(min-width: 42rem) 16.8rem, 40vw"
+					)
+					p
+						| Born and raised in Vancouver, though having lived abroad in Germany, Burkina Faso, West Africa, and China, I became a licensee in 2015.
+						| I have been licensed at five different brokerages including Macdonald Realty, Sutton Group West Coast Realty, and Remax Crest Realty where I am currently licensed.
+						| I regularly qualify for the Medallion Club and speak both English and Mandarin Chinese.
+						| I hold a Bachelor of Arts degree with a major in International Relations from UBC and have also studied at the university level in China.
+						| Prior to being licensed I owned and operated a small landscape maintenance business in Vancouver which had up to six employees at its peak.
+						| I regularly host and emcee events, and created the web-based TV show #[em #[a(href="https://vancouversnexttopagent.ca/" target="_blank" rel="noreferrer noopener") Vancouver’s Next Top Agent]] which you can find on YouTube.
+						| I contribute extensively to the community, and have made significant charitable contributions not only monetarily, but also through my time with several little league baseball associations in Vancouver among other charitable organizations.
+						| I am running as a Director since I want to serve our Board, and more specifically, you.
+
+			picture.divider
+				+source("vancouver/matt-wang-GVr33-rHTDU-unsplash.jpg", [3857, 2790], widthsFull, { rect: "0,middle,3857,1200" })(
+					media="(min-width: 42rem)"
+					sizes="100vw"
+				)
+				+img("vancouver/matt-wang-GVr33-rHTDU-unsplash.jpg", [3857, 2790], widthsFull, {})(
+					alt="An aerial photo of Vancouver on a hazy day, including much of the city, with the downtown area, Burrard Inlet, and the North Shore mountains in the distance"
+					sizes="100vw"
+				)
+
+			div.container
+				section#issues
+					header
+						h2
+							| The issues
+							+deeplink("#issues")
+					p.big As a Director I will work to:
+					ol
+						li#perception.disclosure
+							details
+								summary
+									h3
+										| Improve public perception
+										+deeplink("#perception")
+									p
+										| There is nothing more powerful to us as Realtors than the public trusting us.
+										| But trust is earned, not freely given.
+										| To be frank, while we do many things well, there is a lot of room for improvement.
+										| Each of the following points will either directly or indirectly lead to the public trusting us more.
+										| Therefore as you continue to read you will notice some overlap.
+										| This is because in order to improve the public perception of Realtors, we must increase the value we bring clients and the public.
+									+more
+								p
+									| As part of the Board’s effort to improve the perception of Realtors, the Board is going through a rebranding process as well as considering rolling out a $1.5 million advertising campaign.
+									| The cost for the advertising campaign alone works out to about 10% of your annual Board fees.
+									| There is nothing inherently wrong with this, but what do you think will help the perception of Realtors more?
+								ol(style="list-style-type: lower-alpha")
+									li A multimillion dollar ad and rebranding campaign, or
+									li a 15,000 strong membership of the Board who are well informed, have strong advocacy, and who are equipped with a web platform boasting the most up to date and accurate information and analytical tools, thanks to an MLS® system which is audited and has accurate information.
+								p
+									| Personally, I’d rather have less REBGV logos on the back of the bus, and better tools and data for Realtors.
+									| It would be more effective and would cost less.
+									| I believe the MLS® department needs someone proactively auditing the data and holding members accountable.
+									| Our current system of leaving it to other members of the Board or the public to complain is reactive rather than proactive.
+									| If the public cannot reliably trust the basic information we input for listings, how are they supposed to trust anything else we do?
+						li#data-accuracy.disclosure
+							details
+								summary
+									h3
+										| Improve data accuracy
+										+deeplink("#data-accuracy")
+									p
+										| Our data is only as good as its accuracy, and right now there is room for improvement.
+										| One hindrance is that, to the best of my knowledge, there is nobody employed to actively verify the accuracy of the data for listings.
+										| As a result, our data has less value, and the public trusts us less.
+										| Furthermore, it makes our job more difficult and raises the chances of us making a mistake.
+										| We need to increase enforcement and oversight in order to both protect the accuracy of our information, and to build trust with the public – both of which will help us as Realtors.
+									+more
+								p
+									| The more the public trusts the data on the MLS® system, the more they will trust Realtors.
+									| This means we can provide #[em more] value to our clients in #[em less] time and with less work.
+									| It’s a win/win/win solution that is cost-effective.
+									| Let’s move away from a system which all too often relies on the concerning phrase “buyer to verify if important”, and where information is only verified if someone makes a complaint.
+									| Let’s move towards a system where information is proactively verified and can be trusted.
+						li#technology.disclosure
+							details
+								summary
+									h3
+										| Improve our MLS® and other technology
+										+deeplink("#technology")
+									p
+										| There are many aspects of technology where we are excelling.
+										| The ability of our members to use Autoprop was a game-changer.
+										| That being said, we can improve.
+										| The most obvious is additional search functionality for our MLS®, but it doesn’t stop there.
+										| We need to re-evaluate the different programs we are using and paying for, and we need to improve accountability.
+									+more
+								p
+									| How many times have buyers asked you to set up searches for properties by school catchments?
+									| How often have buyers asked you to set up a search for a property that is a five-minute walk away from a Skytrain station?
+									| What’s your answer?
+									| Unfortunately you have to tell them that no, you can’t set up such a search since our MLS® doesn’t have the tools.
+									| When we aren’t able to perform these #[em very] basic functions are we really doing the best we can for our clients?
+								p
+									| In a previous statement from the Chair of the Board of Directors, a goal of the Board was noted as “working with the other large boards in Canada to re-imagine and invest in cutting-edge MLS® technology”.
+									| This is an admirable goal, and one I am dedicated to working toward.
+									| But quite frankly, I don’t currently see that happening with either the MLS® technology, or with other technology we are using.
+								p
+									| A glaring example of this is WEBForms®.
+									| Now, I know that WEBForms® is a product of the Canadian Real Estate Association (CREA), not the Board, but the boards certainly should have input at the table.
+									| The fact that years later I still need to enter the listing agent’s name and brokerage for every offer I write since WEBForms® is not capable of such a simple task shows me that we are woefully failing at investing in cutting-edge technology.
+									| Realtors accept a platform like this which cannot even perform its own antiquated role. We can do better.
+								p
+									| At a previous company I owned, I identified a major opportunity to increase customer satisfaction and trust in my service while also increasing sales.
+									| I achieved these goals by coming up with the idea to organically create custom software and a public-facing website.
+									| I want to put this same technology background, combined with my expertise in the real estate industry, to improve the Board.
+									| Here's exactly what I did:
+								p
+									| My company provided a service which would eliminate European chafer beetle larvae, which live underneath grass.
+									| This beetle’s life cycle makes this particularly challenging.
+									| Eggs hatch in the summer, but during this time they are so small that homeowners tend not to be aware that they are present.
+									| There’s no obvious clue that there is a problem.
+									| Only when the beetles grow large enough is their presence easily noticed – first by birds, who dig around to eat the larvae, and then by the homeowner, who sees the results.
+									| But by this time the larvae are no longer susceptible to the treatment, and there is no choice for the homeowner but to let the damage continue.
+									| By the time the next summer comes, the grass has recovered and there is once again no visible sign of an infestation, even though there are likely new eggs hiding in the soil and the cycle will repeat.
+								p
+									| To address this problem, I created an application which allowed my staff to manually survey the entire west side of Vancouver with tablets.
+									| Every time my employees saw damage they would record it on the app, including the address of the property, the location and severity of the damage, and they would take photos.
+									| My public-facing website then generated a map based on this data.
+									| The public could see a damage heatmap, and individual homeowners could click to see photos of lawn damage at their own property.
+									| Of course this also meant that I had a database of every home with chafer beetle damage on the west side of Vancouver – thousands of potential leads.
+									| Once the lawns had recovered I was able to educate homeowners about the damage which would likely occur in the upcoming seasons by directly mailing them offers which included pictures of their own property.
+									| To say that this was effective was an understatement.
+								p
+									| I want to use this same problem solving capacity and technology background to improving the way the Real Estate Board equips its members to succeed.
+									| The resources and expertise the Real Estate Board has at its disposal greatly dwarfs anything I had when I undertook this campaign.
+						li#rule-enforcement.disclosure
+							details
+								summary
+									h3
+										| Enforce our standards and rules
+										+deeplink("#rule-enforcement")
+									p
+										| Our rules of cooperation call for strata documents to be ordered prior to listing.
+										| What is the compliance rate?
+										| Low.
+										br
+										| Our rules of cooperation call for the strata plan to be posted with the listing.
+										| Compliance?
+										| Extremely low.
+										br
+										| Our rules of cooperation call for no personal branding to be present on marketing materials.
+										| Compliance?
+										| Not great.
+									p
+										| These are only some of a few examples or rules which are continually flaunted which comes at a cost to our industry and our clients.
+										| We lost self regulation of our industry on the provincial level since we were not willing to police ourselves and we still have not learned our lesson.
+									+more
+								p
+									| I believe the Real Estate Board has done a very good job of having thorough and well-thought-out rules.
+									| But the rules are only as good as their enforcement.
+									| Enforcement of some of the rules is left to individual members notifying the Real Estate Board when they see someone breaking them rather than there being a person whose job is to proactively provide enforcement.
+									| This makes no sense to me.
+									| I propose a proactive rather than reactive solution, where there is a staff member at the Board who is actively reviewing listings to make sure they are compliant.
+								p
+									| Many members have shared with me that they feel uncomfortable reporting other members.
+									| This means conduct which is contrary to our rules has the potential to not be reported.
+									| There is much which could be said on this topic, but I want to show an example of where the Board is in a #[em great] position to enforce existing rules while leveraging the data we already have to make our jobs easier, and to save us money: Strata Plans.
+								p
+									| For all strata properties we have a rule that the Strata Plan must be posted with all listings.
+									| A brief survey shows that the vast majority of strata listings do #[em not] have a Strata Plan posted.
+									| This is not ideal, and there are numerous ways to solve this.
+									| But what about this: why doesn’t the Real Estate Board keep a database of all the Strata Plans they already have, which will be for about 99 percent of listings?
+									| Then instead of asking Realtors to pay $20 to pull a Strata Plan from the Land Titles Office and then post it to MLS®, the Real Estate Board’s MLS® department can simply post the plans they #[em already have].
+									| This means:
+								ol
+									li Every strata listing will have a Strata Plan.
+									li Realtors will save money since they do not need to pull them themselves.
+									li Realtors won’t need to take the time to post the plan to the documents tab – or, as often happens, they will not need to “forget” to post them.
+								p
+									| Everyone wins!
+									| This is an example where the size and administrative power of the Board, along with all the information they already have, can work together to save both the time and money of Realtors, while improving the efficiency of the MLS® and allowing Realtors to do a better job.
+									| The same could be done with Bylaws, Rules, and some other strata documentation, though with additional checks and balances.
+						li#data-usage
+							h3
+								| Re-evaluate our data usage
+								+deeplink("#data-usage")
+							p
+								| We collect a massive amount of data.
+								| We of course use it for our own MLS® and for analysis and statistics purposes, but we also allow other websites to sell our own data back to us.
+								| Rew.ca is an example of a website which does this.
+								| They are taking our own MLS® feed, and then charge Realtors to advertise on their site.
+							p
+								| Would it not make sense for us to create our own website to supplant Rew.ca to be the dominant search engine?
+								| Or, if this is not feasible, would it not make sense to charge such sites a premium for the privilege of using our data?
+								| I honestly don’t know if this is possible, but the fact they are charging Realtors to advertise on the site which displays the data we pay to collect does not sit right with me.
+						li#communication
+							h3
+								| Work with regulators to ensure they understand the consequences of their policies, and then provide feedback to the public about what those policies will do
+								+deeplink("#communication")
+							p
+								| Housing is one of the most politically sensitive issues and this is unlikely to change.
+								| All levels of government are continually enacting new policies which affect our clients.
+								| Often it seems these policies are enacted without the policy makers properly researching the consequences of their actions.
+								| I believe the following four are true:
+							ul
+								li The public will trust us when they see we are experts
+								li We as Realtors of the Board are in the best position to know how housing policies will directly impact our clients
+								li Lawmakers will only value our expertise if they see us as credible
+								li Lawmakers will only value our expertise if they know we will speak thoughtfully and truthfully about the consequences of their actions
+							p
+								| I believe the Real Estate Board should be more proactive in educating the public and lawmakers about the real consequences to everyday buyers and sellers of the government’s changes to laws and regulations.
+								| #[a(href="https://www.youtube.com/watch?v=c57xt4YcLLw" target="_blank" rel="noreferrer noopener") My video about the Home Buyer Rescission Period] is an example of the type of analysis which I feel the Real Estate Board’s communication department could provide.
+
+			picture.divider
+				+source("vancouver/mike-benna-WHHY-iBp3aI-unsplash.jpg", [5716, 3613], widthsFull, { rect: "0,middle,5716,1800" })(
+					media="(min-width: 42rem)"
+					sizes="100vw"
+				)
+				+img("vancouver/mike-benna-WHHY-iBp3aI-unsplash.jpg", [5716, 3613], widthsFull, {})(
+					alt="The Vancouver skyline seen over the water from Stanley Park on a bright day"
+					sizes="100vw"
+				)
+
+			div.container.wide
+				section#conclusion(aria-label="Conclusion")
+					p.big
+						| #[strong Thank you] for taking the time to consider my candidacy.
+						| On #[strong #[a(href=calendarUrl target="_blank" rel="noopener noreferrer") January&nbsp;13,&nbsp;2023]], please vote for me, Mark Wiens, for the position of Director at the Real Estate Board.
+						| Please also do not hesitate to reach out to me with any comments, feedback, or questions.
+					ul.unstyled.contact.card-container
+						li
+							a.card(href=email.href aria-label=`Contact me by email at ${email.label}`)
+								+icon_mail.icon
+								span.label= email.label
+						li
+							a.card(href=tel.href aria-label=`Contact me by phone at ${tel.label}`)
+								+icon_call.icon
+								span.label= tel.label
+						li
+							a.card(href=instagram.href target="_blank" rel="noopener noreferrer" aria-label=`Contact me via Instagram at ${instagram.label}`)
+								+icon_instagram.icon
+								span.label= instagram.label
+			div.container
+				section#questions
+					header
+						h2
+							| Questions and answers
+							+deeplink("#questions")
+					ul.unstyled
+						li#q-what-is-the-board
+							details
+								summary
+									| What does the Board of Directors do?
+									+deeplink("#q-what-is-the-board")
+								p According to the Real Estate Board of Greater Vancouver’s website:
+								blockquote
+									| The REBGV’s Board of Directors oversees management, considers and approves on a continuous basis strategic alternatives and plans, and approves all major strategy and policy recommendations.
+									| In performing its functions, the Board of Directors has the responsibility and the mandate to make decisions in the interests of the REBGV.
+						li#q-are-directors-paid
+							details
+								summary
+									| Are Directors paid?
+									+deeplink("#q-are-directors-paid")
+								p No, the role of Director and the Real Estate Board of Greater Vancouver is a volunteer position.
+						li#q-why-you
+							details
+								summary
+									| Why do you think you would be a good Director?
+									+deeplink("#q-why-you")
+								p
+									| First, I believe I would be a good Director since I want to benefit the Board as an organization as well as its members.
+									| Second, I come from a diverse background geographically, having lived, worked, and studied around the globe; linguistically, being bilingual in English and Mandarin Chinese; and in a real estate setting, having been licensed at several different brokerages with varying business practices, and having sold a high volume of real estate.
+									| Third, as someone with high emotional intelligence I have identified areas where I believe we can improve in order to be able to serve our clients better.
+									| I have the right attitude, mindset and desire to enact positive change and I would be grateful for the opportunity to do so.
+						li#q-why-now
+							details
+								summary
+									| Why are you running this year and not previously?
+									+deeplink("#q-why-now")
+								p At this stage of my career I have a good understanding of the real estate business and I feel I can provide great value in my service to the Board.
+						li#q-when-to-vote
+							details
+								summary
+									| When does voting start?
+									+deeplink("#q-when-to-vote")
+								p
+									| Voting starts on Friday, January 13, 2023, and ends one week later at 12pm.
+									| All voting takes place online through your REBGV account.
+						li#q-how-to-vote
+							details
+								summary
+									| How can I vote?
+									+deeplink("#q-how-to-vote")
+								p
+									| You can vote by logging into your REBGV profile and finding the page for the Board of Directors election.
+									| All voting is online through your profile.
+									| You will need to log in prior to voting.
+						li#q-spreading-the-word
+							details
+								summary
+									| Should I tell all of my friends to vote for Mark Wiens?
+									+deeplink("#q-spreading-the-word")
+								p Certainly – that would be the most prudent form of action. 🙂
+						li#q-me-too
+							details
+								summary
+									| Should I also run as a Director in the next election?
+									+deeplink("#q-me-too")
+								p Let me tell you how it goes after you vote me in.
+						li#q-is-this-self-serving
+							details
+								summary
+									| Do you anticipate earning more business if you succeed as a candidate?
+									+deeplink("#q-is-this-self-serving")
+								p
+									| No, I actually anticipate the opposite.
+									| This position will require a significant investment in time and effort which will mean I have less time to help clients buy or sell real estate.
+									| I am running for this position in order to serve our Board and its members, as well as to learn and expand my skills, not for any financial gain.
+
+		footer
+			picture.divider
+				+source("vancouver/aditya-chinchure-2yN10KHNTzM-unsplash.jpg", [5740, 3827], widthsFull, { rect: "0,627,5740,2400" })(
+					media="(min-width: 42rem)"
+					sizes="100vw"
+				)
+				+img("vancouver/aditya-chinchure-2yN10KHNTzM-unsplash.jpg", [5740, 3827], widthsFull, {})(
+					alt="The Vancouver skyline, including BC Place stadium and the Science World dome, seen at night over the water of False Creek"
+					sizes="100vw"
+				)
+			div.container.wide
+				p The trademarks REALTOR®, REALTORS®, and the REALTOR® logo are controlled by The Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA.
+				p The trademark WEBForms® is owned by The Canadian Real Estate Association (CREA) and identifies CREA’s WEBForms® facility.
+				p The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA. Used under licence.
+				p Mark Wiens does business as Mark Wiens Personal Real Estate Corporation and is licensed at Remax Crest Realty. This communication is not intended to induce a breach of an existing agency relationship. All information, while deemed to be accurate, is not guaranteed and should be independently verified and should not be relied upon. Any and all statements on this website are the personal opinion of Mark Wiens and do not constitute the opinion of the Real Estate Board of Greater Vancouver, of any of its employees or members, or Remax Crest Realty, or any of its affiliates.
+				nav
+					ul.unstyled.no-margin
+						li
+							a(href="https://www.markwiens.ca/" target="_blank" rel="noopener noreferrer" aria-label="Mark Wiens PREC")
+								+icon_language
+						li
+							a(href=email.href aria-label=`Contact me by email at ${email.label}`)
+								+icon_mail
+						li
+							a(href=tel.href aria-label=`Contact me by phone at ${tel.label}`)
+								+icon_call
+						li
+							a(href=instagram.href target="_blank" rel="noopener noreferrer" aria-label=`Contact me via Instagram at ${instagram.label}`)
+								+icon_instagram
+						li
+							a(href="/humans.txt" aria-label="Site credits")
+								+icon_group
