@@ -287,6 +287,21 @@ h1 strong {
 	}
 }
 
+.notification {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+	background-color: var(--brand);
+	color: white;
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+	margin: 0;
+	padding: var(--padding);
+}
+.notification a {
+	color: inherit;
+}
+
 #introduction .youtube {
 	margin-top: calc(0px - var(--padding) - var(--header-padding) / 2);
 	margin-bottom: 2rem;

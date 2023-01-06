@@ -73,6 +73,9 @@ html(lang="en-CA")
 
 	body
 		header#hero
+			p.notification
+				| #[strong Voting is open!]
+				| #[a(href=loginHref target="_blank" rel="noopener noreferrer") Log in to your REBGV profile] and vote Mark Wiens now!
 			h1 Vote #[strong Mark Wiens] for Director
 		main
 			div.container
@@ -85,7 +88,7 @@ html(lang="en-CA")
 						div.prerender
 					p
 						| #[span.big #[strong Hi there!] My name is Mark Wiens.]
-						| I’m asking for your vote for the position of Director in the Real Estate Board of Greater Vancouver’s Board of Directors election, voting for which starts on #[+calendarLink January 13th].
+						| I’m asking for your vote for the position of Director in the Real Estate Board of Greater Vancouver’s Board of Directors election, voting for which is #[strong now in progress].
 						| I’m running for this volunteer position because I have the knowledge, experience, demeanor, willingness, and expertise to make positive change.
 						| I plan to increase the value the Board brings to you while lowering our costs.
 						| While we do a great job in many areas, within the limits and abilities of the role of Director at the Real Estate Board of Greater Vancouver I plan on encouraging the Board to do an even better job at:
@@ -354,7 +357,8 @@ html(lang="en-CA")
 				section#conclusion(aria-label="Conclusion")
 					p.big
 						| #[strong Thank you] for taking the time to consider my candidacy.
-						| On #[strong #[+calendarLink January&nbsp;13,&nbsp;2023]], please vote for me, Mark Wiens, for the position of Director at the Real Estate Board.
+						| #[strong Voting is already open], and runs until #[strong #[+calendarLink January&nbsp;13,&nbsp;2023]].
+						| Please #[a(href=loginHref target="_blank" rel="noopener noreferrer") log in right now] and vote for me, Mark Wiens, for the position of Director at the Real Estate Board.
 						| Please also do not hesitate to reach out to me with any comments, feedback, or questions.
 						| I would love to hear from you.
 					ul.unstyled.contact.card-container
@@ -414,7 +418,7 @@ html(lang="en-CA")
 									| When does voting start?
 									+deeplink("#q-when-to-vote")
 								p
-									| Voting starts on #[+calendarLink Friday, January 13, 2023], and ends one week later on Friday, January 20, 2023 at 12pm.
+									| Voting started on Friday, January 13, 2023, and ends on #[+calendarLink January 20 at 12pm].
 									| All voting takes place online through your REBGV account.
 						li#q-how-to-vote
 							details
@@ -422,7 +426,7 @@ html(lang="en-CA")
 									| How can I vote?
 									+deeplink("#q-how-to-vote")
 								p
-									| You can vote by logging into your REBGV profile and finding the page for the Board of Directors election.
+									| You can vote #[strong right now] by #[a(href=loginHref target="_blank" rel="noopener noreferrer") logging into your REBGV profile] and finding the page for the Board of Directors election.
 									| All voting is online through your profile.
 									| You will need to log in prior to voting.
 						li#q-spreading-the-word
