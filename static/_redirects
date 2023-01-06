@@ -7,7 +7,7 @@ https://www.votemarkwiens.com/* https://www.votemarkwiens.ca/:splat 301!
 https://votemarkwiens.com/* https://www.votemarkwiens.ca/:splat 301!
 
 # wEIns.ca
-https://www.votemarkweins.com/* https://www.votemarkwiens.ca/:splat 301!
-https://votemarkweins.com/* https://www.votemarkwiens.ca/:splat 301!
+https://www.votemarkweins.ca/* https://www.votemarkwiens.ca/:splat 301!
+https://votemarkweins.ca/* https://www.votemarkwiens.ca/:splat 301!
 
 # Finally votemarkwiens.ca is redirected by Netlify, and www.votemarkwiens.ca doesn't need redirection
