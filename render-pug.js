@@ -1,21 +1,11 @@
 const pug = require("pug");
 const fs = require("fs");
 
-const voteHref = "https://www.bigpulse.com/p72001/";
-
-const calendarUrl = new URL("https://calendar.google.com/calendar/render");
-calendarUrl.searchParams.set("action", "TEMPLATE");
-calendarUrl.searchParams.set("text", "Vote Mark Wiens for Director in the REBGV 2023 election");
-calendarUrl.searchParams.set("dates", "20230113T200000Z/20230120T200000Z");
-calendarUrl.searchParams.set("details", `Log in to your REBGV profile and find the page for the Board of Directors election. ${voteHref} Vote for Mark Wiens, and have a great day! https://www.votemarkwiens.ca`);
-
 fs.writeFileSync("dist/index.html", pug.renderFile("src/index.pug", {
 	imgixSrc,
 	imgixSrcset,
 	nominalDimensions,
-	calendarUrl,
 	widthsFull: [320, 360, 420, 576, 640, 788, 801, 1024, 1280, 1680, 1920, 2560],
-	voteHref,
 	instagram: {
 		href: "https://www.instagram.com/markwiensrealestate/",
 		label: "@markwiensrealestate",
