@@ -135,10 +135,12 @@ a.card {
 	background-color: var(--brand);
 	color: white;
 	transition: background-color 0.3s;
+	border-bottom: 0.75rem solid var(--brand-tint);
 }
 .card-container > :nth-child(6n + 1) a.card {
 	background-color: var(--color-1);
 	color: black;
+	border-bottom-color: var(--color-1-tint);
 }
 .card-container > :nth-child(6n + 1) a.card:hover {
 	background-color: var(--color-1-tint);
@@ -146,6 +148,7 @@ a.card {
 .card-container > li:nth-child(6n + 2) a.card {
 	background-color: var(--color-2);
 	color: white;
+	border-bottom-color: var(--color-2-tint);
 }
 .card-container > li:nth-child(6n + 2) a.card:hover {
 	background-color: var(--color-2-tint);
@@ -153,6 +156,7 @@ a.card {
 .card-container > li:nth-child(6n + 3) a.card {
 	background-color: var(--color-3);
 	color: white;
+	border-bottom-color: var(--color-3-tint);
 }
 .card-container > li:nth-child(6n + 3) a.card:hover {
 	background-color: var(--color-3-tint);
@@ -160,6 +164,7 @@ a.card {
 .card-container > li:nth-child(6n + 4) a.card {
 	background-color: var(--color-4);
 	color: black;
+	border-bottom-color: var(--color-4-tint);
 }
 .card-container > li:nth-child(6n + 4) a.card:hover {
 	background-color: var(--color-4-tint);
@@ -167,6 +172,7 @@ a.card {
 .card-container > li:nth-child(6n + 5) a.card {
 	background-color: var(--color-5);
 	color: white;
+	border-bottom-color: var(--color-5-tint);
 }
 .card-container > li:nth-child(6n + 5) a.card:hover {
 	background-color: var(--color-5-tint);
@@ -174,6 +180,7 @@ a.card {
 .card-container > li:nth-child(6n + 6) a.card {
 	background-color: var(--color-6);
 	color: white;
+	border-bottom-color: var(--color-6-tint);
 }
 .card-container > li:nth-child(6n + 6) a.card:hover {
 	background-color: var(--color-6-tint);
