@@ -4,6 +4,7 @@ ul, ol, details {
 
 a {
 	color: var(--brand);
+	transition: color var(--transition-duration);
 }
 a:where(:hover) {
 	color: var(--brand-tint);
@@ -77,6 +78,7 @@ picture.divider img {
 	opacity: 0;
 	margin-left: 0.5em;
 	font-weight: normal;
+	transition: opacity var(--transition-duration);
 }
 .deeplink:focus, *:hover > .deeplink {
 	opacity: 0.5;
@@ -196,6 +198,7 @@ details span.more {
 	cursor: pointer;
 	color: var(--brand);
 	text-decoration: underline;
+	transition: color var(--transition-duration);
 }
 details span.more:where(:hover) {
 	color: var(--brand-tint);

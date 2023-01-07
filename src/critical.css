@@ -1,4 +1,6 @@
 :root {
+	--transition-duration: 0.3s;
+
 	--border-radius: 0.5rem;
 	--padding: 1rem;
 	--header-padding: 15vh;
@@ -116,6 +118,7 @@ a.card {
 	text-decoration: none;
 	padding: var(--padding);
 	border-radius: var(--border-radius);
+	transition: background-color 0.3s;
 }
 .card-container > :nth-child(6n + 1) a.card {
 	background-color: var(--golden);
