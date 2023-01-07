@@ -126,7 +126,7 @@ html {
 }
 a.card {
 	display: grid;
-	align-content: center;
+	align-content: start;
 	gap: 0.5rem;
 	color: inherit;
 	text-decoration: none;
