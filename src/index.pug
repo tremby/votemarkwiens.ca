@@ -20,6 +20,14 @@ mixin source(src, dimensions, widths, options)
 mixin more
 	span.more(aria-hidden="true") Read more…
 
+mixin calendarLink
+	a(
+		href=calendarUrl
+		target="_blank"
+		rel="noopener noreferrer"
+	)&attributes(attributes)
+		block
+
 include icons.pug
 
 doctype html
@@ -329,7 +337,7 @@ html(lang="en-CA")
 				section#conclusion(aria-label="Conclusion")
 					p.big
 						| #[strong Thank you] for taking the time to consider my candidacy.
-						| On #[strong #[a(href=calendarUrl target="_blank" rel="noopener noreferrer") January&nbsp;13,&nbsp;2023]], please vote for me, Mark Wiens, for the position of Director at the Real Estate Board.
+						| On #[strong #[+calendarLink January&nbsp;13,&nbsp;2023]], please vote for me, Mark Wiens, for the position of Director at the Real Estate Board.
 						| Please also do not hesitate to reach out to me with any comments, feedback, or questions.
 						| I would love to hear from you.
 					ul.unstyled.contact.card-container
