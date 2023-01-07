@@ -24,7 +24,7 @@ h3 {
 }
 
 blockquote {
-	border-left: 0.5rem solid var(--golden);
+	border-left: 0.5rem solid var(--highlight);
 	padding-left: 1em;
 }
 
@@ -151,12 +151,12 @@ ul.contact .label {
 	padding-left: var(--hanging-indent);
 	text-indent: calc(0px - var(--hanging-indent));
 }
-#questions > ul > li:nth-child(6n + 1) summary::marker { color: var(--golden); }
-#questions > ul > li:nth-child(6n + 2) summary::marker { color: var(--blue); }
-#questions > ul > li:nth-child(6n + 3) summary::marker { color: var(--orange); }
-#questions > ul > li:nth-child(6n + 4) summary::marker { color: var(--pewter); }
-#questions > ul > li:nth-child(6n + 5) summary::marker { color: var(--green); }
-#questions > ul > li:nth-child(6n + 6) summary::marker { color: var(--purple); }
+#questions > ul > li:nth-child(6n + 1) summary::marker { color: var(--color-1); }
+#questions > ul > li:nth-child(6n + 2) summary::marker { color: var(--color-2); }
+#questions > ul > li:nth-child(6n + 3) summary::marker { color: var(--color-3); }
+#questions > ul > li:nth-child(6n + 4) summary::marker { color: var(--color-4); }
+#questions > ul > li:nth-child(6n + 5) summary::marker { color: var(--color-5); }
+#questions > ul > li:nth-child(6n + 6) summary::marker { color: var(--color-6); }
 
 footer {
 	font-size: 0.8rem;

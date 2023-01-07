@@ -38,8 +38,22 @@
 	--purple: #843581;
 	--purple-tint: #923a8f;
 
+	--color-1: var(--golden);
+	--color-1-tint: var(--golden-tint);
+	--color-2: var(--orange);
+	--color-2-tint: var(--orange-tint);
+	--color-3: var(--green);
+	--color-3-tint: var(--green-tint);
+	--color-4: var(--pewter);
+	--color-4-tint: var(--pewter-tint);
+	--color-5: var(--blue);
+	--color-5-tint: var(--blue-tint);
+	--color-6: var(--purple);
+	--color-6-tint: var(--purple-tint);
+
 	--brand: var(--purple);
 	--brand-tint: var(--purple-tint);
+	--highlight: var(--golden);
 }
 
 @media (max-aspect-ratio: 9 / 17) {
@@ -118,49 +132,51 @@ a.card {
 	text-decoration: none;
 	padding: var(--padding);
 	border-radius: var(--border-radius);
+	background-color: var(--brand);
+	color: white;
 	transition: background-color 0.3s;
 }
 .card-container > :nth-child(6n + 1) a.card {
-	background-color: var(--golden);
+	background-color: var(--color-1);
 	color: black;
 }
 .card-container > :nth-child(6n + 1) a.card:hover {
-	background-color: var(--golden-tint);
+	background-color: var(--color-1-tint);
 }
 .card-container > li:nth-child(6n + 2) a.card {
-	background-color: var(--blue);
+	background-color: var(--color-2);
 	color: white;
 }
 .card-container > li:nth-child(6n + 2) a.card:hover {
-	background-color: var(--blue-tint);
+	background-color: var(--color-2-tint);
 }
 .card-container > li:nth-child(6n + 3) a.card {
-	background-color: var(--orange);
+	background-color: var(--color-3);
 	color: white;
 }
 .card-container > li:nth-child(6n + 3) a.card:hover {
-	background-color: var(--orange-tint);
+	background-color: var(--color-3-tint);
 }
 .card-container > li:nth-child(6n + 4) a.card {
-	background-color: var(--pewter);
+	background-color: var(--color-4);
 	color: black;
 }
 .card-container > li:nth-child(6n + 4) a.card:hover {
-	background-color: var(--pewter-tint);
+	background-color: var(--color-4-tint);
 }
 .card-container > li:nth-child(6n + 5) a.card {
-	background-color: var(--green);
+	background-color: var(--color-5);
 	color: white;
 }
 .card-container > li:nth-child(6n + 5) a.card:hover {
-	background-color: var(--green-tint);
+	background-color: var(--color-5-tint);
 }
 .card-container > li:nth-child(6n + 6) a.card {
-	background-color: var(--purple);
+	background-color: var(--color-6);
 	color: white;
 }
 .card-container > li:nth-child(6n + 6) a.card:hover {
-	background-color: var(--purple-tint);
+	background-color: var(--color-6-tint);
 }
 a.card .icon {
 	display: block;
@@ -182,7 +198,7 @@ a.card .label {
 
 @keyframes highlight {
 	from, 50% {
-		outline: 4px solid var(--golden);
+		outline: 4px solid var(--highlight);
 		outline-offset: 2px;
 	}
 	to {
