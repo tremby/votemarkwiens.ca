@@ -46,6 +46,7 @@ html(lang="en-CA")
 		link(rel="icon" href="/favicon.ico" sizes="any")
 		//- link(rel="icon" href="/favicon.svg" type="image/svg+xml")
 
+		//- Critical styles
 		style(type="text/css")
 			include normalize-cherries.css
 			include critical.css
@@ -58,6 +59,7 @@ html(lang="en-CA")
 		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
 		+lazystyle("https://fonts.googleapis.com/css2?family=Roboto+Flex:wdth,wght@25..125,200..700&display=swap")
 
+		//- Youtube facade
 		script(type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js")
 	body
 		header#hero
