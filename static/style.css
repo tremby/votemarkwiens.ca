@@ -162,7 +162,7 @@ footer {
 	font-size: 0.8rem;
 	font-stretch: 100%;
 	background-color: var(--deep-blue);
-	color: var(--battleship);
+	color: var(--grey-blue);
 	margin-top: var(--big-gap);
 	padding-bottom: var(--big-gap);
 }
@@ -175,7 +175,7 @@ footer a {
 	color: inherit;
 }
 footer a:hover {
-	color: var(--battleship-tint);
+	color: var(--grey-blue-tint);
 }
 
 footer nav {
