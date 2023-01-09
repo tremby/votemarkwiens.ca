@@ -33,6 +33,7 @@ picture.divider img {
 	height: auto;
 	box-shadow: var(--shadow-diffuse);
 	margin: var(--big-gap) 0;
+	filter: var(--image-filter);
 }
 
 #issues > ol {
