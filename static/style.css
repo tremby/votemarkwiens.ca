@@ -3,11 +3,11 @@ ul, ol, details {
 }
 
 a {
-	color: var(--brand);
+	color: var(--link);
 	transition: color var(--transition-duration);
 }
 a:where(:hover) {
-	color: var(--brand-tint);
+	color: var(--link-tint);
 }
 
 h2 {
@@ -33,6 +33,7 @@ picture.divider img {
 	height: auto;
 	box-shadow: var(--shadow-diffuse);
 	margin: var(--big-gap) 0;
+	filter: var(--image-filter);
 }
 
 #issues > ol {
@@ -196,12 +197,12 @@ footer nav svg {
 
 details span.more {
 	cursor: pointer;
-	color: var(--brand);
+	color: var(--link);
 	text-decoration: underline;
 	transition: color var(--transition-duration);
 }
 details span.more:where(:hover) {
-	color: var(--brand-tint);
+	color: var(--link-tint);
 }
 details[open] span.more {
 	display: none;

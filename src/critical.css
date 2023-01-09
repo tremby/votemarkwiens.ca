@@ -54,11 +54,31 @@
 	--brand: var(--purple);
 	--brand-tint: var(--purple-tint);
 	--highlight: var(--golden);
+
+	--background: white;
+	--text: var(--off-black);
+	--link: var(--brand);
+	--link-tint: var(--brand-tint);
+
+	--image-filter: none;
+
+	--hero-text: white;
 }
 
 @media (max-aspect-ratio: 9 / 17) {
 	:root {
 		--header-padding: 25vh;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: var(--off-black);
+		--text: var(--grey-blue);
+		--link: var(--pewter);
+		--link-tint: var(--pewter-tint);
+		--image-filter: brightness(35%) grayscale(30%);
+		--hero-text: var(--text);
 	}
 }
 
@@ -68,8 +88,8 @@
 
 html {
 	scroll-behavior: smooth;
-	background-color: white;
-	color: var(--off-black);
+	background-color: var(--background);
+	color: var(--text);;
 	accent-color: var(--brand);
 	font-family: "Roboto Flex", sans-serif;
 	line-height: var(--line-height-relaxed);
@@ -215,13 +235,10 @@ a.card .label {
 }
 
 header#hero {
-	background-color: var(--pewter);
-	background-size: cover;
-	background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=75&rect=0.3,top,1988,2981&w=360);
-	background-position: center 40%;
+	position: relative;
 	display: grid;
 	place-content: center;
-	color: white;
+	color: var(--hero-text);
 	text-shadow:
 		0 1px 50px rgba(0, 0, 0, 0.3),
 		0 1px 30px rgba(0, 0, 0, 0.1),
@@ -231,38 +248,50 @@ header#hero {
 	padding: var(--header-padding) var(--padding);
 	box-shadow: var(--shadow-diffuse);
 }
+header#hero::before {
+	display: block;
+	position: absolute;
+	left: 0; top: 0; width: 100%; height: 100%;
+	background-color: var(--pewter);
+	background-size: cover;
+	background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=75&rect=0.3,top,1988,2981&w=360);
+	background-position: center 40%;
+	content: "";
+	z-index: -1;
+	filter: var(--image-filter);
+}
 @media (min-device-pixel-ratio: 1.5) {
-	header#hero {
+	header#hero::before {
 		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=60&rect=0.3,top,1988,2981&w=720);
 	}
 }
 @media (min-width: 640px) {
-	header#hero {
+	header#hero::before {
 		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=75&rect=center,top,2981,2981&w=768);
 	}
 }
 @media (min-device-pixel-ratio: 1.5) and (min-width: 640px) {
-	header#hero {
+	header#hero::before {
 		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=60&rect=center,top,2981,2981&w=1536);
 	}
 }
 @media (min-width: 1024px) {
-	header#hero {
+	header#hero::before {
 		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=75&w=1280);
 	}
 }
 @media (min-device-pixel-ratio: 1.5) and (min-width: 1024px) {
-	header#hero {
+	header#hero::before {
 		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=60&w=2560);
 	}
 }
 @media (min-width: 1600px) {
-	header#hero {
+	header#hero::before {
 		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=75&w=1920);
 	}
 }
 @media (min-device-pixel-ratio: 1.5) and (min-width: 1600px) {
-	header#hero {
+	header#hero::before {
 		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=60&w=3840);
 	}
 }
