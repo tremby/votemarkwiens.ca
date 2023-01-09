@@ -25,7 +25,7 @@ fs.writeFileSync("dist/index.html", pug.renderFile("src/index.pug", {
 		href: "mailto:mark@markwiens.ca",
 		label: "mark@markwiens.ca",
 	},
-	gaId: "UA-132800188-1",
+	gaId: "G-XW2146Z6WM",
 }), "utf-8");
 
 /**
