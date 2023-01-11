@@ -43,13 +43,17 @@ picture.divider img {
 	margin-top: var(--big-gap);
 }
 #issues > ol > li > details {
-	--marker: "▶";
+	--marker: "▸";
 }
 #issues > ol > li > details > summary {
 	list-style-type: none;
 }
+/* Cannot combine this with the rule above, nor use :is/:where; things will break */
+#issues > ol > li > details > summary::-webkit-details-marker {
+	display: none;
+}
 #issues > ol > li > details[open] {
-	--marker: "▼";
+	--marker: "▾";
 }
 #issues > ol > li > h3::before {
 	content: counter(list-item) ". ";
@@ -72,16 +76,34 @@ picture.divider img {
 		content: none;
 	}
 }
+/* Target Safari only, which can't make put custom content on a disclosure
+ * marker or position it outside */
+@supports (background: -webkit-named-image(i)) {
+	#issues > ol > li:not(.disclosure) {
+		list-style-type: none;
+	}
+	#issues > ol > li > h3::before {
+		content: counter(list-item) ". ";
+	}
+	#issues > ol > li > details > summary > h3::before {
+		content: var(--marker) " " counter(list-item) ". ";
+	}
+}
 
 .deeplink {
 	text-decoration: none;
-	opacity: 0;
 	margin-left: 0.5em;
 	font-weight: normal;
-	transition: opacity var(--transition-duration);
-}
-.deeplink:focus, *:hover > .deeplink {
 	opacity: 0.5;
+}
+@media (pointer: fine) {
+	.deeplink {
+		opacity: 0;
+		transition: opacity var(--transition-duration);
+	}
+	.deeplink:where(:focus), *:where(:hover) > .deeplink {
+		opacity: 0.5;
+	}
 }
 
 .no-margin {
@@ -157,6 +179,13 @@ ul.contact .label {
 #questions > ul > li:nth-child(6n + 4) summary::marker { color: var(--color-4); }
 #questions > ul > li:nth-child(6n + 5) summary::marker { color: var(--color-5); }
 #questions > ul > li:nth-child(6n + 6) summary::marker { color: var(--color-6); }
+/* Cannot combine these with the rules above, nor use :is/:where; things will break */
+#questions > ul > li:nth-child(6n + 1) summary::-webkit-details-marker { color: var(--color-1); }
+#questions > ul > li:nth-child(6n + 2) summary::-webkit-details-marker { color: var(--color-2); }
+#questions > ul > li:nth-child(6n + 3) summary::-webkit-details-marker { color: var(--color-3); }
+#questions > ul > li:nth-child(6n + 4) summary::-webkit-details-marker { color: var(--color-4); }
+#questions > ul > li:nth-child(6n + 5) summary::-webkit-details-marker { color: var(--color-5); }
+#questions > ul > li:nth-child(6n + 6) summary::-webkit-details-marker { color: var(--color-6); }
 
 footer {
 	font-size: 0.8rem;
