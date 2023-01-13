@@ -13,6 +13,7 @@ fs.writeFileSync("dist/index.html", pug.renderFile("src/index.pug", {
 	nominalDimensions,
 	calendarUrl,
 	widthsFull: [320, 360, 420, 576, 640, 788, 801, 1024, 1280, 1680, 1920, 2560],
+	loginHref: "https://gvfv.clareityiam.net/idp/login",
 	instagram: {
 		href: "https://www.instagram.com/markwiensrealestate/",
 		label: "@markwiensrealestate",
