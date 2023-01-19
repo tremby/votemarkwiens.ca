@@ -287,16 +287,28 @@ h1 strong {
 	}
 }
 
-.notification {
+.notification-area {
 	position: absolute;
-	left: 50%;
+	left: var(--padding);
+	right: var(--padding);
 	top: 0;
-	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: var(--padding);
+}
+.notification {
 	background-color: var(--brand);
 	color: white;
-	border-radius: 0 0 var(--border-radius) var(--border-radius);
+	border-radius: var(--border-radius);
 	margin: 0;
 	padding: var(--padding);
+	text-align: center;
+}
+.notification:first-child {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 .notification a {
 	color: inherit;

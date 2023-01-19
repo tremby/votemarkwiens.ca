@@ -76,9 +76,10 @@ html(lang="en-CA")
 
 	body
 		header#hero
-			p.notification
-				| #[strong Voting is open!]
-				| #[a(href=voteHref target="_blank" rel="noopener noreferrer") Log in to your REBGV profile and vote Mark Wiens now!]
+			div.notification-area
+				p.notification
+					| #[strong Voting is open!]
+					| #[a(href=voteHref target="_blank" rel="noopener noreferrer") Log in to your REBGV profile and vote Mark Wiens now!]
 			h1 Vote #[strong Mark Wiens] for Director
 		main
 			div.container
