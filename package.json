@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "concurrently": "^7.6.0",
+    "dotenv": "^16.4.7",
     "pug": "^3.0.2"
   }
 }

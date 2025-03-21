@@ -217,7 +217,7 @@ a.card .label {
 header#hero {
 	background-color: var(--pewter);
 	background-size: cover;
-	background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=75&rect=0.3,top,1988,2981&w=360);
+	background-image: url(https://votemarkwiens.imgix.net/realestate/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress%2Cformat&q=75&rect=0.3%2Ctop%2C1988%2C2981&w=360&s=6796c8dade19ce84f84479ccb4b166bc);
 	background-position: center 40%;
 	display: grid;
 	place-content: center;
@@ -233,37 +233,37 @@ header#hero {
 }
 @media (min-device-pixel-ratio: 1.5) {
 	header#hero {
-		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=60&rect=0.3,top,1988,2981&w=720);
+		background-image: url(https://votemarkwiens.imgix.net/realestate/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress%2Cformat&q=75&rect=0.3%2Ctop%2C1988%2C2981&w=720&s=26cb69672ed4edaeb26e818e00b360cf);
 	}
 }
 @media (min-width: 640px) {
 	header#hero {
-		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=75&rect=center,top,2981,2981&w=768);
+		background-image: url(https://votemarkwiens.imgix.net/realestate/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress%2Cformat&q=75&rect=center%2Ctop%2C2981%2C2981&w=768&s=50a56b35f214ddf18aec0708c80635e3);
 	}
 }
 @media (min-device-pixel-ratio: 1.5) and (min-width: 640px) {
 	header#hero {
-		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=60&rect=center,top,2981,2981&w=1536);
+		background-image: url(https://votemarkwiens.imgix.net/realestate/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress%2Cformat&q=75&rect=center%2Ctop%2C2981%2C2981&w=1536&s=a9a812622a6c6a00271efdb296725574);
 	}
 }
 @media (min-width: 1024px) {
 	header#hero {
-		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=75&w=1280);
+		background-image: url(https://votemarkwiens.imgix.net/realestate/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress%2Cformat&q=75&w=1280&s=cd1d9ac9412bec8ea6ed8088f552035b);
 	}
 }
 @media (min-device-pixel-ratio: 1.5) and (min-width: 1024px) {
 	header#hero {
-		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=60&w=2560);
+		background-image: url(https://votemarkwiens.imgix.net/realestate/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress%2Cformat&q=75&w=2560&s=627eb347700645cb5acaed095450a32a);
 	}
 }
 @media (min-width: 1600px) {
 	header#hero {
-		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=75&w=1920);
+		background-image: url(https://votemarkwiens.imgix.net/realestate/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress%2Cformat&q=75&w=1920&s=197b9977ad834c4c9479d630debbb6b8);
 	}
 }
 @media (min-device-pixel-ratio: 1.5) and (min-width: 1600px) {
 	header#hero {
-		background-image: url(https://votemarkwiens.imgix.net/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress,format&q=60&w=3840);
+		background-image: url(https://votemarkwiens.imgix.net/realestate/vancouver/lee-robinson-Yc9h5SJdEzI-unsplash.jpg?auto=compress%2Cformat&q=75&w=3840&s=e32ad509819ef44d6cee6b897f44fada);
 	}
 }
 
